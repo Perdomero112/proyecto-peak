@@ -36,6 +36,7 @@ h3,
 .logo {
     font-family: 'Playfair Display', serif;
     font-weight: 700;
+
 }
 
 .container {
@@ -67,9 +68,11 @@ h3,
 }
 
 .logo {
+    position: relative;
     font-size: 1.5rem;
     letter-spacing: 2px;
     color: var(--accent-color);
+    bottom: 5px;
 }
 
 .nav-links {
@@ -99,6 +102,12 @@ h3,
     justify-content: center;
     text-align: center;
     padding: 0 2rem;
+    background:
+        linear-gradient(rgba(4, 15, 30, .75),
+            rgba(4, 15, 30, .80)),
+        url("https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=1400&q=80");
+    background-size: cover;
+    background-position: center;
 }
 
 .hero h1 {
@@ -116,9 +125,33 @@ h3,
     margin: 0 auto;
 }
 
+main {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+main::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("/img/logo4.png");
+    background-repeat: no-repeat;
+    background-position: 30% center;
+    background-size: cover;
+    opacity: 0.12;
+    z-index: -1;
+}
+
+main>* {
+    position: relative;
+    z-index: 1;
+}
+
 /* Secciones Generales */
 section {
     padding: 6rem 0;
+
 }
 
 .section-title {
